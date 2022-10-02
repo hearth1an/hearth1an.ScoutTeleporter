@@ -2,6 +2,8 @@
 using OWML.Common;
 using OWML.ModHelper;
 using ProbeTeleporter.Utilities.ModAPIs;
+using System.Numerics;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace ProbeTeleporter
@@ -52,41 +54,53 @@ namespace ProbeTeleporter
 
         public void EnableWh()
         {
+            var probeBody = Locator.GetProbe().GetComponent<OWRigidbody>();
+            var playerBody = Locator.GetPlayerBody();
+
+            playerBody.SetAngularVelocity(probeBody.GetAngularVelocity());
+            playerBody.SetVelocity(probeBody.GetVelocity());
+
             var WH = SearchUtilities.Find("Probe_Body/WhiteHole");
             WH.SetActive(true);
             Invoke("DisableWh", 0.5f);
+            
         }
         public void DisableWh()
         {
             var WH = SearchUtilities.Find("Probe_Body/WhiteHole");
             WH.SetActive(false);
+            
         }
 
         public void EnableBh()
         {
+            var probeBody = Locator.GetProbe().GetComponent<OWRigidbody>();
+            var playerBody = Locator.GetPlayerBody();
+
+            playerBody.SetAngularVelocity(probeBody.GetAngularVelocity());
+            playerBody.SetVelocity(probeBody.GetVelocity());
             var BH = SearchUtilities.Find("BHTeleport");
             BH.transform.position = Locator.GetPlayerBody().transform.position;
             BH.SetActive(true);
             Invoke("DisableBh", 0.5f);
+            
         }
         public void DisableBh()
         {
             var BH = SearchUtilities.Find("BHTeleport");
-            BH.SetActive(false);
+            BH.SetActive(false);            
         }
 
         public void Update()
         {
-            if (Locator.GetProbe().IsAnchored() && Keyboard.current[Key.T].wasReleasedThisFrame)
-            {
-                //Locator.GetPlayerBody().transform.position = Locator.GetProbe().transform.position;                
+            if (Locator.GetProbe().IsAnchored() && Locator.GetPlayerBody().GetComponent<PlayerBody>()._activeRigidbody == Locator.GetPlayerBody().GetComponent<Rigidbody>() && Keyboard.current[Key.T].wasReleasedThisFrame)
+            {                 
                 Invoke("EnableWh", 0.2f);
                 Invoke("EnableBh", 0.3f);
                 ModHelper.Console.WriteLine("Teleported!", MessageType.Success);
             }
-            if (Locator.GetProbe().IsLaunched() && Keyboard.current[Key.T].wasReleasedThisFrame)
-            {
-                //Locator.GetPlayerBody().transform.position = Locator.GetProbe().transform.position;                
+            if (Locator.GetProbe().IsLaunched() && Locator.GetPlayerBody().GetComponent<PlayerBody>()._activeRigidbody == Locator.GetPlayerBody().GetComponent<Rigidbody>() && Keyboard.current[Key.T].wasReleasedThisFrame)
+            {                 
                 Invoke("EnableWh", 0.2f);
                 Invoke("EnableBh", 0.3f);
                 ModHelper.Console.WriteLine("Teleported!", MessageType.Success);
