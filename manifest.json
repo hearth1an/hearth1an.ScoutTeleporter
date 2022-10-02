@@ -1,0 +1,10 @@
+{
+    "$schema": "https://raw.githubusercontent.com/amazingalek/owml/master/schemas/manifest_schema.json",
+    "filename": "ProbeTeleporter.dll",
+    "author": "hearth1an",
+    "name": "Probe Teleporter",
+    "uniqueName": "hearth1an.ProbeTeleporter",
+    "version": "1.0.0",
+    "owmlVersion": "2.3.2",
+    "dependencies": [ "xen.NewHorizons", "JohnCorby.VanillaFix"]
+}
