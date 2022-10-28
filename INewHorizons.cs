@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace ProbeTeleporter.Utilities.ModAPIs
+namespace ScoutTeleporter.Utilities.ModAPIs
 {
     public interface INewHorizons
     {
