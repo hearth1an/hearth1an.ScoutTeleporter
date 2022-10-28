@@ -39,6 +39,10 @@ namespace ScoutTeleporter
             {
                 _teleportPromt.VisibilityControllerSetVisibility(_teleportPromt, false);
             }
+            if (Locator.GetProbe().enabled == false)
+            {
+                _teleportPromt.VisibilityControllerSetVisibility(_teleportPromt, false);
+            }
         }
         private void OnStarSystemLoaded(string systemName)
         {
@@ -110,6 +114,7 @@ namespace ScoutTeleporter
         public void ResetTimer()
         {
             reset = 0f;
+            Locator.GetPlayerAudioController().PlayEnterLaunchCodes();
         }
         public void Update()
         {
