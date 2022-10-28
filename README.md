@@ -1,5 +1,7 @@
-# Probe Teleporter mod
+![ScoutTeleporter](https://user-images.githubusercontent.com/106444732/198589192-369d7aee-0c5a-4bc5-b6f7-3cda3c473c9a.gif)
 
-Hatchling thought that Probe could be much useful if you'll add to it Nomai warp core and gravity crystall. Pure Hearthians technology!
+# Scout Teleporter mod
 
-Press "T" when probe is launched or landed to inverse the warp core power to teleport yourself to probe.
+Pure Hearthian technology! Now you can use scout to teleport yourself or climb anywhere with tiny gravity crystall.
+
+Press "T" when scout is launched or landed to inverse the warp core power for teleporting yourself.
