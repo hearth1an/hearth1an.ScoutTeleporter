@@ -3,8 +3,8 @@
     "filename": "ScoutTeleporter.dll",
     "author": "hearth1an",
     "name": "Scout Teleporter",
-    "uniqueName": "hearth1an.ScoutTeleporter",
-    "version": "1.0.2",
+    "uniqueName": "hearth1an.ProbeTeleporter",
+    "version": "1.0.4",
     "owmlVersion": "2.3.2",
     "dependencies": [ "xen.NewHorizons", "JohnCorby.VanillaFix"]
 }
